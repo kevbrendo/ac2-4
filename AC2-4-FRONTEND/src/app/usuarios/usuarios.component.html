@@ -1,0 +1,14 @@
+<div *ngIf="usuarios.length > 0">
+    <ul>
+      <li *ngFor="let usuario of usuarios">
+        <p>ID: {{ usuario._id }}</p>
+        <p>Nome: {{ usuario.nome }}</p>
+        <p>Email: {{ usuario.email }}</p>
+        <p>Senha: {{ usuario.senha }}</p>
+        <p>Ativo: {{ usuario.ativo }}</p>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="usuarios.length === 0">
+    <p>No users found.</p>
+  </div>

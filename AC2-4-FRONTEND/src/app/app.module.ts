@@ -18,6 +18,10 @@ import { ListaCompraClienteComponent } from './cliente/lista-compra-cliente/list
 import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
 import { FormTemplateDrivenComponent } from './form-template-driven/form-template-driven.component';
 import { FormReativeComponent } from './form-reative/form-reative.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { UsuarioService } from './services/usuario.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +39,7 @@ import { FormReativeComponent } from './form-reative/form-reative.component';
     EditarClienteComponent,
     FormTemplateDrivenComponent,
     FormReativeComponent,
+    UsuariosComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,8 +47,9 @@ import { FormReativeComponent } from './form-reative/form-reative.component';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UsuarioService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

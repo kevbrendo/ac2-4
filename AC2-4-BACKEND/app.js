@@ -1,23 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors'); 
 
 require('dotenv').config();
-const DB_USER = process.env.DB_USER
-const DB_PASSWORD = process.env.DB_PASSWORD
+const DB_USER = process.env.db_user
+const DB_PASSWORD = process.env.db_key
 
 const usuarioRouter = require('./routes/usuario');
-const lista1Router = require('./routes/lista1');
-const alunoRouter = require('./routes/aluno');
-
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.use('/usuario', usuarioRouter);
-app.use('/lista1', lista1Router);
-app.use('/aluno', alunoRouter);
 
-mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.oy8p7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
+mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.vi1gr.mongodb.net/`)
     .then(() => {
         app.listen(3000, () => {
             console.log('Conectado ao mongoDB');
